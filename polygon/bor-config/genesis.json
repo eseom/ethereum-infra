@@ -1,0 +1,73 @@
+{
+  "config": {
+    "chainId": 7722,
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 3395000,
+    "muirGlacierBlock": 3395000,
+    "berlinBlock": 14750000,
+    "londonBlock": 23850000,
+    "shanghaiBlock": 50523000,
+    "cancunBlock": 54876000,
+    "clique": {
+      "period": 5,
+      "epoch": 30000
+    },
+    "bor": {
+      "jaipurBlock": 23850000,
+      "delhiBlock": 38189056,
+      "indoreBlock": 44934656,
+      "ahmedabadBlock": 62278656,
+      "stateSyncConfirmationDelay": {
+        "44934656": 128
+      },
+      "period": {
+        "0": 2
+      },
+      "producerDelay": {
+        "0": 6,
+        "38189056": 4
+      },
+      "sprint": {
+        "0": 64,
+        "38189056": 16
+      },
+      "backupMultiplier": {
+        "0": 2
+      },
+      "validatorContract": "0x0000000000000000000000000000000000001000",
+      "stateReceiverContract": "0x0000000000000000000000000000000000001001",
+      "overrideStateSyncRecords": {
+        "14949120": 8,
+        "14949184": 0,
+        "14953472": 0,
+        "14953536": 5,
+        "14953600": 0,
+        "14953664": 0,
+        "14953728": 0,
+        "14953792": 0,
+        "14953856": 0
+      }
+    }
+  },
+  "nonce": "0x0",
+  "timestamp": "0x5ED20F84",
+  "extraData": "0x00000000000000000000000000000000000000000000000000000000000000008d33720c95570326264de5bf7cb16cd94d3f20cf0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "gasLimit": "0x989680",
+  "coinbase": "0x8d33720c95570326264de5bf7cb16cd94d3f20cf",
+  "difficulty": "0x1",
+  "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "alloc": {
+    "0x8d33720c95570326264de5bf7cb16cd94d3f20cf": {
+      "balance": "100000000000000000000"
+    }
+  },
+  "number": "0x0",
+  "gasUsed": "0x0"
+}

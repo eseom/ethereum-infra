@@ -1,0 +1,45 @@
+chain = "/config/genesis.json"
+identity = "localbor"
+gcmode = "archive"
+syncmode = "full"
+datadir = "/data"
+port = 30303
+devfakeauthor = false
+nodiscover = true
+"bor.logs" = true
+[p2p]
+maxpeers = 0
+nodiscover = true
+[heimdall]
+# url = "http://heimdall:1317"
+without = true
+# "bor.without" = true
+[consensus]
+engine = "clique"
+# [consensus]
+# engine = "ibft2"
+[miner]
+mine = true
+etherbase = "0x8d33720c95570326264de5bf7cb16cd94d3f20cf"
+gaslimit = 30000000
+gasprice = "1"
+noverify = false
+[jsonrpc]
+ipcpath = "/var/lib/bor/bor.ipc"
+ensabled = true
+port = 8545
+host = "0.0.0.0"
+apis = ["eth", "net", "web3", "txpool", "admin"]
+[developer]
+# dev = true
+# period = 0
+# gaslimit = 115000000
+[accounts]
+unlock = ["0x8d33720c95570326264de5bf7cb16cd94d3f20cf"]
+password = "/password"
+allow-insecure-unlock = true
+# # lightkdf = false
+# disable-bor-wallet = true
+[node]
+allow-insecure-unlock = true
+no-discover = true

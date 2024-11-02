@@ -1,0 +1,40 @@
+version: "3.3"
+services:
+  bor:
+    tty: true
+    image: 0xpolygon/bor:1.5.0
+    volumes:
+      - ./bor-config:/config
+      - ./bor-data:/data
+      - ./bor-keystore:/keystore
+      - ./password:/password
+    ports:
+      - "8545:8545"
+      - "8546:8546"
+      - "30303:30303"
+    entrypoint: /bin/sh
+    command:
+      - -c
+      - |
+        ls -al /data
+        rm -rf /data/*
+        /usr/bin/bor server \
+          --datadir /data \
+          --keystore /keystore \
+          --config /config/config.toml \
+          --chain /config/genesis.json \
+          --unlock 0x8d33720c95570326264de5bf7cb16cd94d3f20cf \
+          --allow-insecure-unlock \
+          --password /password \
+          --bor.withoutheimdall \
+          --http \
+          --http.addr 0.0.0.0 \
+          --http.port 8545 \
+          --http.api personal,eth,net,web3,txpool,miner,rpc,admin,debug \
+          --http.corsdomain '*' \
+          --http.vhosts '*' \
+          --ws \
+          --ws.addr 0.0.0.0 \
+          --ws.port 8546 \
+          --ws.api admin,eth,miner,web3,net,personal,txpool,debug \
+          --verbosity 5
