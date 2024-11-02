@@ -1,0 +1,47 @@
+version: '3'
+services:
+  eth_node:
+    image: ethereum/client-go:v1.13.13
+    platform: linux/amd64
+    volumes:
+      - ./eth-data:/eth-data
+      - ./eth-keystore:/keystore
+      - ./genesis.json:/genesis.json
+      - ./password:/password
+    ports:
+      - "8545:8545"
+      - "30303:30303"
+    entrypoint: /bin/sh
+    command:
+      - -c
+      - |
+        ls -al /eth-data
+        rm -rf /eth-data/geth
+        /usr/local/bin/geth --datadir /eth-data init /genesis.json
+        /usr/local/bin/geth \
+          --syncmode full \
+          --gcmode archive \
+          --datadir /eth-data \
+          --nodiscover \
+          --maxpeers "0" \
+          --networkid 7722 \
+          --port 30303 \
+          --http \
+          --http.addr 0.0.0.0 \
+          --http.port 8545 \
+          --http.api personal,eth,net,web3,txpool,miner,rpc,admin,debug \
+          --http.corsdomain '*' \
+          --http.vhosts '*' \
+          --mine \
+          --miner.etherbase 0x8d33720c95570326264de5bf7cb16cd94d3f20cf \
+          --ws \
+          --ws.addr 0.0.0.0 \
+          --ws.port 8546 \
+          --ws.api admin,eth,miner,web3,net,personal,txpool,debug \
+          --unlock 0x8d33720c95570326264de5bf7cb16cd94d3f20cf \
+          --allow-insecure-unlock \
+          --password /password \
+          --rpc.allow-unprotected-txs \
+          --keystore /keystore \
+          --ipcpath /eth-data/geth.ipc \
+          --verbosity 0
