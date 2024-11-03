@@ -9,12 +9,12 @@
     "byzantiumBlock": 0,
     "constantinopleBlock": 0,
     "petersburgBlock": 0,
-    "istanbulBlock": 3395000,
-    "muirGlacierBlock": 3395000,
-    "berlinBlock": 14750000,
-    "londonBlock": 23850000,
-    "shanghaiBlock": 50523000,
-    "cancunBlock": 54876000,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "berlinBlock": 0,
+    "londonBlock": 0,
+    "shanghaiBlock": 0,
+    "cancunBlock": 0,
     "clique": {
       "period": 5,
       "epoch": 30000

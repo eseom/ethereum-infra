@@ -44,4 +44,4 @@ services:
           --rpc.allow-unprotected-txs \
           --keystore /keystore \
           --ipcpath /eth-data/geth.ipc \
-          --verbosity 0
+          --verbosity 5
